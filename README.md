@@ -23,3 +23,19 @@ Python3.8、Pandas、Matplotlib、MySQL、SQLAlchemy、pymysql
 2. 低消费用户话费少、使用时长低，流失率中等，可推出低价小额流量套餐提升用户粘性；
 3. 不同地理区域流失差异明显，偏远区域客户使用时长偏低、流失更高，反映通信覆盖、线下服务存在短板，可针对性优化基站与线下营业厅运营。
 注：原始数据集来自阿里云电信客户流失公开数据集，文件较大不上传仓库，本地运行需自行配置 MySQL 账号、数据集路径。
+## 目录结构
+```
+telecom_flow_analysis
+├─ data
+│ ├─ raw # 原始数据集（阿里云公开数据集，文件过大不上传仓库）
+│ └─ processed # 清洗完成后的标准化干净数据
+├─ result # 程序输出：统计 csv 表格、可视化对比图表
+├─ src # Python 业务代码
+│ ├─ 01_read_data.py # 数据探查读取脚本
+│ ├─ 02_data_clean.py # 数据清洗预处理核心脚本
+│ ├─ 03_stat_analysis.py# 多维度分组统计分析
+│ ├─ 04_plot.py # Matplotlib 可视化绘图
+│ └─ 05_save_to_mysql.py# MySQL 批量入库 + 原生 SQL 查询
+├─ README.md # 项目说明文档
+└─ requirements.txt # 项目依赖库清单
+```
